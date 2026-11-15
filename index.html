@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>윤슬 YUN:SEUL — 전통 모티프 데일리 액세서리</title>
+<meta name="description" content="한국의 아름다움을 일상 속에서. 전통 장신구를 현대적으로 재해석한 데일리 액세서리 브랜드 윤슬.">
+<!-- Brand fonts: Pretendard (body) / 조선일보명조 (display). Fallbacks from Google Fonts load where these CDNs are blocked. -->
+<link rel="preload" as="image" href="assets/img/hero-model.jpg" fetchpriority="high">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#app">본문으로 건너뛰기</a>
+
+<!-- Header: symbol (left) · menu (center) · KR/EN + icons (right). Menu labels stay English in both languages. -->
+<header class="site-header" id="header">
+  <a class="logo" href="#home" aria-label="YUN:SEUL home">
+    <svg class="logo-symbol" viewBox="432 597 274 260" aria-hidden="true"><use href="#sym-line"/></svg>
+  </a>
+
+  <nav class="main-nav" aria-label="Main">
+    <div class="nav-item has-mega">
+      <a href="#collection" data-nav="collection" aria-haspopup="true" data-type="nav_collection" data-label="COLLECTION">COLLECTION</a>
+      <div class="mega" id="megaCol"></div>
+    </div>
+    <div class="nav-item has-mega">
+      <a href="#shop" data-nav="shop" aria-haspopup="true" data-type="nav_shop" data-label="SHOP">SHOP</a>
+      <div class="mega" id="mega"></div>
+    </div>
+    <a href="#about" data-nav="about" data-type="nav_about" data-label="ABOUT">ABOUT</a>
+    <a href="#journal-lookbook" data-nav="lookbook" data-type="nav_lookbook" data-label="LOOKBOOK">LOOKBOOK</a>
+    <a href="#journal" data-nav="journal" data-type="nav_journal" data-label="JOURNAL">JOURNAL</a>
+  </nav>
+
+  <div class="header-tools">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="ko" aria-pressed="true">KR</button>
+      <span class="lang-sep" aria-hidden="true">/</span>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <button type="button" class="icon-btn" id="searchBtn" aria-label="Search" aria-expanded="false" aria-controls="searchPanel">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.3 15.3 20.5 20.5"/></svg>
+    </button>
+    <a class="icon-btn" href="#account" aria-label="My page">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c.8-4 3.8-6.3 7.5-6.3s6.7 2.3 7.5 6.3"/></svg>
+    </a>
+    <button type="button" class="icon-btn bag-btn" id="bagBtn" aria-label="Shopping bag">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6L5 8Z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg>
+      <span class="bag-count" id="bagCount" hidden>0</span>
+    </button>
+    <button type="button" class="icon-btn menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8h17M3.5 16h17"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Search panel -->
+<div class="search-panel" id="searchPanel" hidden data-lenis-prevent>
+  <div class="search-inner">
+    <label class="search-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.3 15.3 20.5 20.5"/></svg>
+      <input id="searchInput" type="search" autocomplete="off" aria-label="Search">
+    </label>
+    <div class="search-results" id="searchResults" aria-live="polite"></div>
+  </div>
+</div>
+
+<nav class="mobile-nav" id="mobileNav" hidden aria-label="Mobile" data-lenis-prevent>
+  <details class="m-col" id="mCol"></details>
+  <details class="m-shop" id="mShop"></details>
+  <a href="#about" data-nav="about" data-type="nav_about" data-label="ABOUT">ABOUT</a>
+  <a href="#journal-lookbook" data-nav="lookbook" data-type="nav_lookbook" data-label="LOOKBOOK">LOOKBOOK</a>
+  <a href="#journal" data-nav="journal" data-type="nav_journal" data-label="JOURNAL">JOURNAL</a>
+  <div class="lang lang-mobile" role="group" aria-label="Language">
+    <button type="button" data-lang="ko" aria-pressed="true">KR</button>
+    <span class="lang-sep" aria-hidden="true">/</span>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</nav>
+
+<main id="app" tabindex="-1"></main>
+
+<footer class="site-footer">
+  <div class="ft-mark"><a href="#home" class="ft-word" aria-label="YUN:SEUL home"></a></div>
+  <div class="ft-side">
+    <nav class="ft-links" aria-label="footer">
+      <a href="https://www.instagram.com/yunseul.kr_official/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#contact">Contact</a>
+      <a class="ft-mail" href="mailto:Yunseul-jewelry@gmail.com">Yunseul-jewelry@gmail.com</a>
+      <a href="#gift">Gift guide</a>
+    </nav>
+    <p class="ft-note" data-t="footer_note"></p>
+    <div class="ft-bottom">
+      <form class="ft-news" id="ftNews" novalidate>
+        <label for="ftEmail">Subscribe to our newsletter</label>
+        <input id="ftEmail" type="email" autocomplete="email" placeholder="Email address" required>
+      </form>
+      <dl class="ft-meta">
+        <div><dt>Seoul</dt><dd id="ftClock">--:-- KST</dd></div>
+        <div><dt>© 2026</dt><dd>YUN:SEUL</dd></div>
+      </dl>
+    </div>
+  </div>
+</footer>
+
+<!-- Bag drawer -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-labelledby="drawerTitle" hidden>
+  <div class="drawer-head">
+    <h2 id="drawerTitle" data-t="cart_title"></h2>
+    <button type="button" class="text-btn" id="drawerClose" data-t="close"></button>
+  </div>
+  <div class="drawer-body" id="drawerBody" data-lenis-prevent></div>
+  <div class="drawer-foot" id="drawerFoot"></div>
+</aside>
+
+<!-- Dialog -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal-card">
+    <span class="frame-corner tl" aria-hidden="true"></span><span class="frame-corner br" aria-hidden="true"></span>
+    <h2 id="modalTitle" data-t="demo_title"></h2>
+    <p data-t="demo_body"></p>
+    <button type="button" class="btn" id="modalOk" data-t="ok"></button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Lenis smooth scroll (optional; the site works without it) -->
+<script src="js/data.js"></script>
+<script src="js/symbols.js"></script>
+<script src="js/type.js"></script>
+<script src="js/type-chosun.js"></script>
+<script src="js/type-lookbook.js"></script>
+<script src="js/type-chosun2.js"></script>
+<script src="js/type-ahn2.js"></script>
+<script src="js/type-ahn3.js"></script>
+<script src="js/type-chosun3.js"></script>
+<script src="js/type-chosun4.js"></script>
+<script src="js/type-ahn5.js"></script>
+<script src="js/type-en7.js"></script>
+<script src="js/type-ahn4.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
