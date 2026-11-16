@@ -191,6 +191,7 @@ html[lang="en"] body { letter-spacing: 0; }
 
 .mobile-nav { position: fixed; inset: var(--header-h) 0 auto 0; z-index: 39; background: var(--ink); padding: 24px var(--gutter) 32px; display: grid; gap: 4px; border-bottom: 1px solid var(--line); }
 .mobile-nav > a, .m-shop summary, .m-col summary { font-family: var(--serif); font-size: var(--fs-lg); letter-spacing: .1em; padding: 8px 0; }
+.mobile-nav > .m-account { display: none; } /* 모바일(mobile.css)에서만 표시 */
 .mobile-nav .lang-mobile { border: 0; padding: 20px 0 0; margin: 12px 0 0; border-top: 1px solid var(--line); font-size: var(--fs-sm); }
 
 .account { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 120px); align-items: start; }
