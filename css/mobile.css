@@ -321,3 +321,7 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 .exa-kicker { display: block; font-size: 11px; letter-spacing: .16em; color: #8a8a8a; margin-bottom: 6px; }
 .exa-kicker { margin-top: 40px; }
 .exa-kicker + .exa-title { margin-top: 0; }
+
+/* ---------- 저널 전시: '진행 중' 배지를 미니 포스터 아래로 ---------- */
+.exa-left { position: relative; top: auto; grid-template-columns: 72px 1fr; }
+.exa-date .status { position: absolute; left: 0; top: calc(72px * 150 / 99 + 10px); width: 72px; text-align: center; padding-left: 0; padding-right: 0; }
