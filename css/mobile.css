@@ -35,7 +35,9 @@ section:not(.kw-sec) > .wrap > .h-sub.about-h { font-size: 24px; margin-bottom: 
 
 /* ---------- 홈 히어로: 곡선 숨김 · 모델 얼굴 보이게 · 문구는 아래로 ---------- */
 .hero .he-lines { display: none; }
-.hero .hm-ph img { object-position: 56% 30%; }
+.hero .hm-ph img { object-position: 53% 30%; }
 .he-t2 .hm-ph::after { background: linear-gradient(0deg, rgba(6,8,7,.82) 0%, rgba(6,8,7,.55) 26%, rgba(6,8,7,0) 48%); }
 .he-t2 .he-bottom { top: auto; bottom: 92px; transform: none; gap: 20px; }
 .he-t2 .he-side .hero-sub { margin-bottom: 14px; font-size: 14px; }
+html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
+.he-t2 .he-side .hero-sub { line-height: 1.6; }

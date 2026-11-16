@@ -6,6 +6,8 @@
   'use strict';
   const M = {
     /* 홈 */
+    't.hero_sub.ko': '전통 장신구의 우아함을<br>매일 착용할 수 있는 형태로 다시 짓습니다.',
+    't.hero_sub.en': 'We rework traditional Korean ornaments<br>into pieces made for everyday wear.',
     't.intro_body.ko': '한국 전통 장신구의 아름다움을 오늘의 디자인으로 다시 짓는 데일리 액세서리 브랜드입니다.',
     't.intro_body.en': 'An everyday accessory brand that reworks traditional Korean ornaments for today.',
     't.nc_body.ko': '한국의 꽃 무궁화를 자개로 피워낸 2026 시그니처 라인. 빛에 따라 옥빛과 분홍빛이 번갈아 비칩니다.',
