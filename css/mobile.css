@@ -233,3 +233,5 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 .pd-form { gap: 16px; }
 .pd-form .form-error:empty { display: none; }
 .pd-actions { margin-top: 8px; gap: 8px; }
+.pd-price { line-height: 1.2; }
+.pd-spec { margin-top: 3px; line-height: 1.4; }
