@@ -228,3 +228,8 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 .mc-item { padding-top: 16px; }
 .mc-sum { gap: 10px; }
 .mc-total { padding-top: 14px; }
+.pd-spec { margin-top: 2px; }
+.pd-price { margin-top: 4px; }
+.pd-form { gap: 16px; }
+.pd-form .form-error:empty { display: none; }
+.pd-actions { margin-top: 8px; gap: 8px; }
