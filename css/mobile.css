@@ -264,7 +264,7 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 .ah-new .aha-l, .ah-new .aha-r { text-align: center; }
 
 /* ---------- 어바웃: '윤슬이 지키는 다섯 가지' 타이포 줄이기 ---------- */
-.kw-sec .about-h { font-size: 1.35rem; margin-bottom: 24px; }
+.kw-sec .about-h { font-size: 1.5rem; margin-bottom: 24px; }
 
 /* ---------- 어바웃 심볼: 제목 → 심볼 카드 2개 → 본문 ---------- */
 .symbol-row { grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -273,7 +273,7 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 .symbol-row .body-copy { grid-column: 1 / -1; margin-top: 6px; }
 
 /* ---------- 어바웃 타이틀 행간 · 다섯 가지 제목 가운데 정렬 (두 제목 줄 간격 동일하게) ---------- */
-.aha-title .ah-title .ln + .ln { margin-top: 30px; }
+.aha-title .ah-title .ln + .ln { margin-top: 24px; }
 .kw-sec .about-h { text-align: center; }
 .kw-sec .about-h .ln .type { margin-left: auto; margin-right: auto; }
 .kw-sec .about-h .ln + .ln { margin-top: 18px; }
