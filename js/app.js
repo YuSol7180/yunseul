@@ -380,7 +380,7 @@
         </div>
         <div class="shop-bar">
           <nav class="tabs" aria-label="Category">${tabs.map(([id, name, href]) => `<a href="${href}" ${id === filter ? 'aria-current="page"' : ''}>${name}<sup>${count(id)}</sup></a>`).join('')}</nav>
-          <label class="sort"><span class="sort-lbl">${t('sort_label')}</span>
+          <label class="sort"><span class="sort-lbl">${t('sort_label')}</span><span class="sort-cur" aria-hidden="true">${t('sort_' + shopSort)}</span>
             <select id="sortSel">${['rec', 'new', 'low', 'high'].map((s) => `<option value="${s}" ${s === shopSort ? 'selected' : ''}>${t('sort_' + s)}</option>`).join('')}</select>
           </label>
           <button type="button" class="shop-filter" id="shopFilterBtn" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/></svg>${t('filter_label')}</button>
@@ -448,16 +448,19 @@
     return `
     <section class="section on-light page-top">
       <div class="wrap pd">
+        <div class="pd-swipe" data-swipe><div class="pd-swipe-track">${p.images.map((n, i) => `<div class="pd-swipe-item">${img(n, i ? '' : L(p.name), i === 0)}</div>`).join('')}</div>
+          ${p.images.length > 1 ? `<div class="pd-dots" aria-hidden="true">${p.images.map((_, i) => `<i${i ? '' : ' class="on"'}></i>`).join('')}</div>` : ''}</div>
         <div class="pd-gallery">
           <div class="pd-thumbs">${p.images.map((n, i) => `<button type="button" data-img="${n}" aria-current="${i === 0}" aria-label="${i + 1}">${img(n, '')}</button>`).join('')}</div>
           <div class="pd-main ph">${img(p.images[0], L(p.name), true)}</div>
         </div>
         <div class="pd-info">
           ${crumbs([['SHOP', '#shop'], [L(catById(p.category)), '#shop-' + p.category], [L(p.name)]])}
-          <a class="pd-col" href="#${c.id}">${L(c.name)}</a>
+          <div class="pd-colrow"><a class="pd-col" href="#${c.id}">${L(c.name)}</a>${p.isNew ? '<span class="pd-new">NEW</span>' : ''}</div>
           <h1 class="pd-name">${L(p.name)}</h1>
           <p class="pd-price price" id="pdPrice">${won(p.price)}</p>
           <p class="pd-summary">${L(p.summary)}</p>
+          <p class="pd-spec">${L(p.short)} · ${L(p.spec)}</p>
           <form class="pd-form" id="pdForm" novalidate>
             ${p.plating ? `<fieldset style="border:0;padding:0;margin:0"><legend class="field-label">${t('pd_finish')}</legend>
               <div class="chips">
@@ -859,6 +862,7 @@
     const sortSel = $('#sortSel');
     if (sortSel) sortSel.addEventListener('change', () => {
       shopSort = sortSel.value;
+      { const sc = $('.sort-cur'); if (sc) sc.textContent = t('sort_' + shopSort); }
       const items = shopItems(shopFilter);
       $('#shopGrid').innerHTML = items.map(productCard).join('');
     });
@@ -881,6 +885,8 @@
       main.src = IMG(b.dataset.img);
       $$('.pd-thumbs button').forEach((x) => x.setAttribute('aria-current', x === b));
     }));
+    { const sw = $('[data-swipe] .pd-swipe-track'), dots = $$('.pd-dots i');   // 모바일 전용 스와이프 갤러리
+      if (sw && dots.length) sw.addEventListener('scroll', () => { const i = Math.round(sw.scrollLeft / sw.clientWidth); dots.forEach((d, k) => d.classList.toggle('on', k === i)); }, { passive: true }); }
     const form = $('#pdForm'), priceEl = $('#pdPrice'), err = $('#pdErr');
     const unit = () => p.price + (form.finish && form.finish.value === 'gold' ? 10000 : 0);
     form.addEventListener('change', () => { priceEl.textContent = won(unit()); err.textContent = ''; });

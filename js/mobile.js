@@ -40,6 +40,10 @@
     'c:gyeopgyeol.story.en': 'A ring set from the traditional double garakji. Wear Jangyeol and Bitgyeol alone or stacked.',
 
     /* 제품 상세 */
+    't.pd_finish.ko': '도금',
+    't.pd_finish.en': 'Plating',
+    't.gold.ko': '골드',
+    't.gold.en': 'Gold',
     'p:mg-necklace.summary.ko': '꽃잎마다 자개를 감입한 펜던트 목걸이. 빛에 따라 옥빛과 분홍빛이 비칩니다.',
     'p:mg-necklace.summary.en': 'Mother-of-pearl set in every petal, shifting between jade and pink.',
     'p:mg-earring.summary.ko': '담수 진주 아래로 자개 무궁화가 흔들리는 드롭 귀걸이.',

@@ -342,7 +342,7 @@ html[lang="en"] .def-word { font-size: clamp(3.6rem, 9vw, 7.6rem); letter-spacin
 .tabs a[aria-current="page"] { background: var(--ink); color: var(--pearl); }
 .tabs sup { font-size: 10px; margin-left: 3px; opacity: .55; vertical-align: super; }
 .sort { display: flex; align-items: center; gap: 10px; font-size: var(--fs-sm); color: var(--muted-dark); white-space: nowrap; }
-.shop-filter, .fsheet { display: none; } /* 모바일(mobile.css)에서만 표시 */
+.shop-filter, .fsheet, .sort-cur, .pd-swipe, .pd-spec, .pd-new { display: none; } /* 모바일(mobile.css)에서만 표시 */
 .sort select { border: 0; border-bottom: 1px solid var(--line-dark); background: transparent; font: inherit; color: var(--text-dark); padding: 4px 2px; }
 
 .shop-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 48px; gap: 24px; }
