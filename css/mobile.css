@@ -4,3 +4,27 @@
 
 /* 제품 카드: 펜던트·길이 등 사이즈 표기 숨김 (상세 페이지 '사이즈' 항목에는 그대로 있음) */
 .pcard-spec { display: none; }
+
+/* ---------- 상단바: 햄버거(왼쪽) · 심볼(가운데) · 검색/장바구니(오른쪽) ---------- */
+.site-header { grid-template-columns: 1fr auto 1fr; }
+.site-header .logo { grid-column: 2; justify-self: center; }
+.site-header .logo-symbol { width: 34px; height: 32px; }
+.header-tools { grid-column: 3; justify-self: end; gap: 2px; }
+.header-tools > a.icon-btn[href="#account"] { display: none; }
+.header-tools > .menu-btn { position: absolute; left: calc(var(--gutter) - 9px); top: 50%; transform: translateY(-50%); }
+
+/* ---------- 제품 카드: 글자 볼륨과 간격 키우기 ---------- */
+.pgrid { row-gap: 40px; }
+.pcard-body { padding-top: 16px; }
+.pcard-name { font-size: 15.5px; line-height: 1.35; letter-spacing: -0.01em; }
+.pcard-short { margin-top: 6px; font-size: 13px; line-height: 1.45; color: #777; }
+.pcard .price { margin-top: 16px; font-size: 16px; letter-spacing: .01em; }
+
+/* ---------- 어바웃: 심볼 · 그래픽 모티브 · 컬러 글자 줄이기 ---------- */
+.symbol-row .h-sub.about-h,
+section:not(.kw-sec) > .wrap > .h-sub.about-h { font-size: 24px; margin-bottom: 24px !important; }
+.symbol-row .body-copy { font-size: 14px; line-height: 1.7; }
+.motif-grid h3 { font-size: 16px; margin-bottom: 6px; }
+.motif-grid p { font-size: 13px; line-height: 1.6; }
+.swatch { height: 128px; padding: 12px; font-size: 11px; }
+.swatch b { font-size: 12.5px; }
