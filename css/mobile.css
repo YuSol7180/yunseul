@@ -271,3 +271,9 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 .symbol-row > div:last-child { display: contents !important; }
 .symbol-row .h-sub.about-h { order: -1; grid-column: 1 / -1; margin-bottom: 8px !important; }
 .symbol-row .body-copy { grid-column: 1 / -1; margin-top: 6px; }
+
+/* ---------- 어바웃 타이틀 행간 · 다섯 가지 제목 가운데 정렬 (두 제목 줄 간격 동일하게) ---------- */
+.aha-title .ah-title .ln + .ln { margin-top: 30px; }
+.kw-sec .about-h { text-align: center; }
+.kw-sec .about-h .ln .type { margin-left: auto; margin-right: auto; }
+.kw-sec .about-h .ln + .ln { margin-top: 18px; }
