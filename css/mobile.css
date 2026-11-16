@@ -291,3 +291,14 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 
 /* ---------- 룩북: 무궁화 자개 · 처마 · 겹결 라벨 작게 ---------- */
 .lbb-label { font-size: 14px; }
+
+/* ---------- 홈: 뉴 컬렉션 아래 여백 줄이기 ---------- */
+.nc { padding-bottom: 44px; }
+
+/* ---------- 홈 베스트셀러: 소재 줄 숨김 · '전체 보기'는 카드 아래 가운데 ---------- */
+.best .pcard-short { display: none; }
+.best .wrap { display: flex; flex-direction: column; }
+.best .shop-head { display: contents; }
+.best .shop-head .h-section { margin-bottom: 24px; }
+.best .pgrid { order: 2; }
+.best .shop-head .link-line { order: 3; align-self: center; margin-top: 36px; }
