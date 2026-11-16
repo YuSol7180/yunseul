@@ -235,3 +235,9 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 .pd-actions { margin-top: 8px; gap: 8px; }
 .pd-price { line-height: 1.2; }
 .pd-spec { margin-top: 3px; line-height: 1.4; }
+/* 도금 줄: Safari에서 legend가 한 줄 위로 떨어지는 문제 → legend는 숨기고 같은 줄 라벨 사용 */
+.pd-form fieldset { display: block; }
+.pd-form fieldset > legend.field-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; float: none; }
+.pd-optrow { display: flex; align-items: center; gap: 16px; }
+.pd-optlbl { display: inline-block; min-width: 2.6em; font-size: 14px; color: #8a8a8a; }
+.pd-price { margin-top: 12px; }

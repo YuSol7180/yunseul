@@ -463,10 +463,10 @@
           <p class="pd-spec">${L(p.short)} · ${L(p.spec)}</p>
           <form class="pd-form" id="pdForm" novalidate>
             ${p.plating ? `<fieldset style="border:0;padding:0;margin:0"><legend class="field-label">${t('pd_finish')}</legend>
-              <div class="chips">
+              <div class="pd-optrow"><span class="pd-optlbl" aria-hidden="true">${t('pd_finish')}</span><div class="chips">
                 <label class="chip"><input type="radio" name="finish" value="silver" checked><span style="--dot:#d5d8da">${t('silver')}</span></label>
                 <label class="chip"><input type="radio" name="finish" value="gold"><span style="--dot:#d6b469">${t('gold')}</span></label>
-              </div></fieldset>` : ''}
+              </div></div></fieldset>` : ''}
             ${p.ring ? `<div><label class="field-label" for="ringSize">${t('pd_ringsize')}</label>
               <select class="select" id="ringSize" name="size"><option value="">${t('pd_choose')}</option>${sizes.map((s) => `<option value="${s}">${lang === 'ko' ? s + '호' : 'KR ' + s}</option>`).join('')}</select></div>` : ''}
             <label class="check"><input type="checkbox" name="msg"> ${t('pd_giftwrap')}</label>
