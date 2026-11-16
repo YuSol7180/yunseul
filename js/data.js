@@ -443,6 +443,7 @@ YS.t = {
   shop_best_tab: { ko: '베스트', en: 'Best' },
   shop_bycol: { ko: '컬렉션으로 보기', en: 'Shop by collection' },
   sort_label: { ko: '정렬', en: 'Sort' },
+  filter_label: { ko: '필터', en: 'Filter' },
   sort_rec: { ko: '추천순', en: 'Recommended' },
   sort_new: { ko: '신상품순', en: 'Newest' },
   sort_low: { ko: '낮은 가격순', en: 'Price: low to high' },

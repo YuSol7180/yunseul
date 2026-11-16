@@ -380,9 +380,11 @@
         </div>
         <div class="shop-bar">
           <nav class="tabs" aria-label="Category">${tabs.map(([id, name, href]) => `<a href="${href}" ${id === filter ? 'aria-current="page"' : ''}>${name}<sup>${count(id)}</sup></a>`).join('')}</nav>
-          <label class="sort">${t('sort_label')}
+          <label class="sort"><span class="sort-lbl">${t('sort_label')}</span>
             <select id="sortSel">${['rec', 'new', 'low', 'high'].map((s) => `<option value="${s}" ${s === shopSort ? 'selected' : ''}>${t('sort_' + s)}</option>`).join('')}</select>
           </label>
+          <button type="button" class="shop-filter" id="shopFilterBtn" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/></svg>${t('filter_label')}</button>
+          <div class="fsheet" id="fSheet" hidden><div class="fsheet-bg" data-fclose></div><div class="fsheet-panel" role="dialog" aria-label="${t('filter_label')}"><div class="fsheet-head"><b>${t('filter_label')}</b><button type="button" data-fclose aria-label="${t('close')}">✕</button></div>${tabs.map(([id, name, href]) => `<a href="${href}" ${id === filter ? 'aria-current="page"' : ''}>${name}<sup>${count(id)}</sup></a>`).join('')}</div></div>
         </div>
         <div class="pgrid" id="shopGrid">${items.map(productCard).join('')}</div>
       </div>
@@ -851,6 +853,9 @@
     { const ah = $('#ahSlot'); if (ah) { bindAboutHero(ah); const p2 = heroCleanup; heroCleanup = () => { p2 && p2(); if (ahCleanup) { ahCleanup(); ahCleanup = null; } }; } }
     if (h.startsWith('p-')) bindProduct(byId(h.slice(2)));
 
+    { const fb = $('#shopFilterBtn'), fs = $('#fSheet');   // 모바일 전용 필터 시트 (PC에서는 버튼이 숨겨져 있음)
+      if (fb && fs) { fb.addEventListener('click', () => { fs.hidden = false; requestAnimationFrame(() => fs.classList.add('open')); });
+        fs.addEventListener('click', (e) => { if (e.target.closest('[data-fclose], a')) { fs.classList.remove('open'); setTimeout(() => { fs.hidden = true; }, 300); } }); } }
     const sortSel = $('#sortSel');
     if (sortSel) sortSel.addEventListener('change', () => {
       shopSort = sortSel.value;
