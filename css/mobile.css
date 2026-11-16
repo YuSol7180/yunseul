@@ -309,3 +309,7 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 
 /* ---------- 제품 카드: 사진↔제품명 여백 줄이기 ---------- */
 .pcard-body { padding-top: 10px; }
+
+/* ---------- 홈 히어로: 아래 글자띠 숨김 · 제목/본문 더 아래로 ---------- */
+.hero .he-band--ticker { display: none; }
+.he-t2 .he-bottom { bottom: 44px; }
