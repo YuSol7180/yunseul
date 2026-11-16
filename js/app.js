@@ -540,7 +540,8 @@
         <div class="exa-desc">
           <p>${x.summary ? L(x.summary) : L(x.tagline)}</p>
           <p class="exa-addr">${(x.address ? L(x.address) : [L(x.venue)]).join('<br>')}</p>
-          <p>${L(x.fee)}</p>
+          <p class="exa-fee">${L(x.fee)}</p>
+          ${x.address && L(x.address).length > 2 ? `<p class="exa-addr-m">${L(x.address)[0]}, ${L(x.fee)}<br>${L(x.address).slice(1).join(', ')}</p>` : ''}
           <p class="exa-date"><span class="status s-${st.cls}">${st.label}</span><span>${fmtRange(x.start, x.end)}</span></p>
         </div>
       </div>
@@ -553,6 +554,7 @@
             <button type="button" class="exs-next" aria-label="${lang === 'ko' ? '다음 사진' : 'Next image'}"><svg viewBox="0 0 6 10" aria-hidden="true"><path d="m1 1 4 4-4 4"/></svg></button>
           </div>
         </div>
+        <p class="exa-kicker">YUNSEUL EXHIBITION</p>
         <h3 class="exa-title">${lang === 'ko' && x.id === 'across-time' ? TT('ko_ex_title', L(x.title)) : L(x.title)}</h3>
         <p class="exa-sub">YUNSEUL EXHIBITION · ${L(x.tagline)}</p>
         <p class="exa-body">${L(x.body)}</p>

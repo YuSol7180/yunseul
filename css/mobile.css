@@ -313,3 +313,11 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 /* ---------- 홈 히어로: 아래 글자띠 숨김 · 제목/본문 더 아래로 ---------- */
 .hero .he-band--ticker { display: none; }
 .he-t2 .he-bottom { bottom: 44px; }
+
+/* ---------- 저널 전시: 주소·관람료 묶기 · YUNSEUL EXHIBITION을 제목 위로 ---------- */
+.exa-desc .exa-addr, .exa-desc .exa-fee { display: none; }
+.exa-desc .exa-addr-m { display: block; }
+.exa-sub { display: none; }
+.exa-kicker { display: block; font-size: 11px; letter-spacing: .16em; color: #8a8a8a; margin-bottom: 6px; }
+.exa-kicker { margin-top: 40px; }
+.exa-kicker + .exa-title { margin-top: 0; }
