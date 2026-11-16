@@ -541,7 +541,7 @@
           <p>${x.summary ? L(x.summary) : L(x.tagline)}</p>
           <p class="exa-addr">${(x.address ? L(x.address) : [L(x.venue)]).join('<br>')}</p>
           <p class="exa-fee">${L(x.fee)}</p>
-          ${x.address && L(x.address).length > 2 ? `<p class="exa-addr-m">${L(x.address)[0]}, ${L(x.fee)}<br>${L(x.address).slice(2).join(', ')}</p>` : ''}
+          ${x.address && L(x.address).length > 2 ? `<p class="exa-addr-m">${L(x.address)[0]}, ${L(x.fee)}</p>` : ''}
           <p class="exa-date"><span class="status s-${st.cls}">${st.label}</span><span>${fmtRange(x.start, x.end)}</span></p>
         </div>
       </div>
