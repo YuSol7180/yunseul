@@ -118,6 +118,7 @@
     </section>
 
     <section class="nc on-light" aria-labelledby="ncTitle">
+      <div class="nc-mhead"><div><p class="nc-eyebrow">NEW COLLECTION</p><h2 class="nc-mtitle">${colType(colById('mugunghwa'))}<small>NEW</small></h2></div><a class="nc-mall" href="#mugunghwa">${t('nc_all')}</a></div>
       <div class="nc-head">
         ${LINE_SYMBOL('nc-symbol')}
         <h2 class="nc-title" id="ncTitle">${TT('ch_nc', t('nc_eyebrow'))}</h2>

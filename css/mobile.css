@@ -241,3 +241,21 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 .pd-optrow { display: flex; align-items: center; gap: 16px; }
 .pd-optlbl { display: inline-block; min-width: 2.6em; font-size: 14px; color: #8a8a8a; }
 .pd-price { margin-top: 12px; }
+
+/* ---------- 홈 뉴 컬렉션: 왼쪽 제목 · 오른쪽 전체 보기 · 가로 스크롤 카드 ---------- */
+.nc .nc-head, .nc .nc-more { display: none; }
+.nc-mhead { display: flex; justify-content: space-between; align-items: flex-start; padding: 0 var(--gutter); margin-bottom: 18px; }
+.nc-eyebrow { font-size: 12px; letter-spacing: .16em; color: #8a8a8a; margin-bottom: 6px; }
+.nc-mtitle { display: flex; align-items: baseline; gap: 8px; font-family: var(--serif); font-weight: 400; font-size: 1.55rem; line-height: 1.2; color: var(--text-dark); }
+.nc-mtitle .type { height: calc(var(--h) / var(--em) * 1em); }
+.nc-mtitle small { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: .06em; color: var(--gold); }
+.nc-mall { font-size: 13px; color: #555; margin-top: 2px; }
+.nc .nc-grid { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 0 var(--gutter); margin: 0; max-width: none; scroll-padding-left: var(--gutter); }
+.nc .nc-grid::-webkit-scrollbar { display: none; }
+.nc .nc-grid .pcard { flex: 0 0 42%; scroll-snap-align: start; }
+.nc .nc-grid .pcard-short { display: none; }
+.nc .nc-grid .pcard-body { padding-top: 10px; }
+.nc .nc-grid .pcard-name { font-size: 13px; }
+.nc .nc-grid .price { margin-top: 4px; font-size: 14px; font-weight: 700; }
+.nc .nc-grid .quick-add, .nc .nc-grid .badge { display: none; }
+.nc { padding: 64px 0 72px; }

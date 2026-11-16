@@ -440,6 +440,7 @@ YS.t = {
 
   /* home */
   nc_eyebrow: { ko: '2026 NEW COLLECTION', en: '2026 NEW COLLECTION' },
+  nc_all: { ko: '전체 보기', en: 'View all' },
   nc_body: { ko: '윤슬의 2026 신규 컬렉션은 한국의 꽃 무궁화를 자개로 피워낸 시그니처 라인입니다.<br class="br-d"> 빛의 각도에 따라 옥빛과 분홍빛이 번갈아 비치는 꽃잎을, 매일의 목선과 귓가, 손목 위에서 만나보세요.', en: 'Our 2026 collection is a signature line that brings the mugunghwa, Korea\u2019s flower, into bloom in mother-of-pearl.<br class="br-d"> Its petals shift between jade and pale pink as the light moves \u2014 at your neckline, your ear and your wrist, every day.' },
   nc_more: { ko: '무궁화 자개 컬렉션 전체 보기', en: 'See the full Mugunghwa Jagae collection' },
   kv_caption: { ko: '2026 캠페인 · 무궁화 자개', en: '2026 campaign · Mugunghwa Jagae' },
