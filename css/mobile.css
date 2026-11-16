@@ -277,3 +277,9 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 .kw-sec .about-h { text-align: center; }
 .kw-sec .about-h .ln .type { margin-left: auto; margin-right: auto; }
 .kw-sec .about-h .ln + .ln { margin-top: 18px; }
+
+/* ---------- 룩북 · 저널: 부제목 작게, 제목에 붙이기 · 저널 ALL/EXHIBITIONS/EVENTS 탭 숨김 ---------- */
+.journal .page-type + .lead { font-size: 14px; line-height: 1.6; margin-top: 8px !important; color: #666; }
+.lookbook-page .page-type + .lead { margin-bottom: 40px !important; }
+.journal .j-tabs { display: none; }
+.journal:not(.lookbook-page) .page-type + .lead { margin-bottom: 48px; }
