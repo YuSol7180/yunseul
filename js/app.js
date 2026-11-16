@@ -1079,6 +1079,8 @@
     $('#bagCount').textContent = n; $('#bagCount').hidden = n === 0;
     $('#bagBtn').setAttribute('aria-label', 'Shopping bag, ' + n);
     const body = $('#drawerBody'), foot = $('#drawerFoot');
+    drawer.classList.toggle('m-cart', window.matchMedia('(max-width: 760px)').matches);
+    if (drawer.classList.contains('m-cart')) { renderBagMobile(body, foot); return; }
     if (!bag.length) { body.innerHTML = `<p class="drawer-empty">${t('cart_empty')}</p>`; foot.innerHTML = `<a class="btn" href="#shop" data-close>${t('nav_collections')}</a>`; return; }
     body.innerHTML = bag.map((b, i) => {
       const p = byId(b.id); if (!p) return '';
@@ -1093,6 +1095,46 @@
     const total = bag.reduce((s, b) => s + b.price * b.qty, 0);
     foot.innerHTML = `<div class="total"><span>${t('cart_total')}</span><span class="price">${won(total)}</span></div><button type="button" class="btn" id="checkout">${t('cart_checkout')}</button>`;
   }
+  /* 모바일 전용 장바구니 (PC 드로어는 위의 renderBag 그대로) */
+  let cartWrap = false;
+  function renderBagMobile(body, foot) {
+    const ICO = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${d}"/></svg>`;
+    const head = `<div class="mc-top"><button type="button" class="mc-ic" data-close aria-label="${t('close')}">${ICO('M15 5 8 12l7 7')}</button><button type="button" class="mc-ic" data-close aria-label="${t('close')}">${ICO('M6 6l12 12M18 6 6 18')}</button></div>
+      <div class="mc-title"><h2>${lang === 'ko' ? TT('ko_cart', t('cart_title')) : t('cart_title')}</h2><span>${t('cart_items').replace('{n}', bag.length)}</span></div>`;
+    if (!bag.length) { body.innerHTML = head + `<p class="drawer-empty">${t('cart_empty')}</p>`; foot.innerHTML = `<a class="btn" href="#shop" data-close>${t('nav_collections')}</a>`; return; }
+    const on = bag.filter((b) => !b.off);
+    const sub = on.reduce((s, b) => s + b.price * b.qty, 0);
+    const wrapFee = cartWrap && on.length ? 3000 : 0;
+    const total = sub + wrapFee;
+    const CHK = (attr, checked) => `<label class="mc-chk"><input type="checkbox" ${attr} ${checked ? 'checked' : ''}><span aria-hidden="true">${ICO('M6 12.5l4 4 8-9')}</span></label>`;
+    body.innerHTML = head + `
+      <div class="mc-all">${CHK('data-all aria-label="' + t('cart_all') + '"', on.length === bag.length)}<span class="mc-all-t">${t('cart_all')} ${on.length}/${bag.length}</span><button type="button" class="mc-rmsel" data-rmsel>${t('cart_rmsel')}</button></div>
+      ${bag.map((b, i) => {
+        const p = byId(b.id); if (!p) return '';
+        const opts = [b.finish ? t(b.finish).split(' (')[0] : null, b.size ? (lang === 'ko' ? b.size + '호' : 'KR ' + b.size) : null, b.msg ? t('pd_giftwrap').split(' (')[0] : null].filter(Boolean).join(' · ');
+        return `<div class="mc-item">
+          ${CHK('data-sel="' + i + '" aria-label="' + L(p.name) + '"', !b.off)}
+          <img src="${IMG(p.images[0])}" alt="">
+          <div class="mc-info"><div class="mc-name">${L(p.name)}</div><div class="mc-opt">${opts}</div>
+            <div class="mc-qty"><button type="button" data-q="${i}" data-d="-1" aria-label="-">−</button><span>${b.qty}</span><button type="button" data-q="${i}" data-d="1" aria-label="+">+</button></div></div>
+          <button type="button" class="mc-x" data-rm="${i}" aria-label="${t('cart_remove')}">${ICO('M7 7l10 10M17 7 7 17')}</button>
+          <span class="mc-price">${won(b.price * b.qty)}</span>
+        </div>`;
+      }).join('')}
+      <div class="mc-wrap"><div><b>${t('cart_wrap')}</b><small>${t('cart_wrap_sub')}</small></div><button type="button" class="mc-sw" role="switch" aria-checked="${cartWrap}" aria-label="${t('cart_wrap')}" data-wrap><i></i></button></div>
+      <dl class="mc-sum"><div><dt>${t('cart_sub')}</dt><dd>${won(sub)}</dd></div><div><dt>${t('cart_wrapfee')}</dt><dd>${won(wrapFee)}</dd></div><div><dt>${t('cart_ship')}</dt><dd>${t('cart_free')}</dd></div></dl>
+      <div class="mc-total"><span>${t('cart_grand')}</span><b>${won(total)}</b></div>`;
+    foot.innerHTML = `<button type="button" class="btn" id="checkout" ${on.length ? '' : 'disabled'}>${t('cart_pay').replace('{p}', won(total))}</button>`;
+  }
+  drawer.addEventListener('change', (e) => {
+    const sel = e.target.closest('[data-sel]'), all = e.target.closest('[data-all]');
+    if (sel) { bag[+sel.dataset.sel].off = !sel.checked; saveBag(); }
+    if (all) { bag.forEach((b) => { b.off = !all.checked; }); saveBag(); }
+  });
+  drawer.addEventListener('click', (e) => {
+    if (e.target.closest('[data-rmsel]')) { bag = bag.filter((b) => b.off); saveBag(); }
+    if (e.target.closest('[data-wrap]')) { cartWrap = !cartWrap; renderBag(); }
+  });
   function openBag() { renderBag(); drawer.hidden = false; scrim.hidden = false; requestAnimationFrame(() => drawer.classList.add('open')); $('#drawerClose').focus(); }
   function closeBag() { drawer.classList.remove('open'); scrim.hidden = true; setTimeout(() => { drawer.hidden = true; }, 450); }
   $('#bagBtn').addEventListener('click', openBag);
