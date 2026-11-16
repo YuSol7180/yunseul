@@ -316,12 +316,13 @@
         const narrow = window.innerWidth < 760;
         const ix = (narrow ? 8 : 34) * e, iy = 12 * e;
         const isNew = sec.classList.contains('ah-new');
-        im.style.clipPath = isNew ? `inset(${(39 * e).toFixed(2)}% ${ix}% ${(4 * e).toFixed(2)}% ${ix}%)` : `inset(${iy}% ${ix}% ${iy}% ${ix}%)`;
-        if (isNew) $('.aha-title', sec).style.transform = `translate(-50%, calc(-50% - ${(23 * e).toFixed(2)}vh)) scale(${(1 - 0.45 * e).toFixed(4)})`;
+        const cT = narrow ? 31 : 39, cB = narrow ? 36 : 4; // 모바일: 액자를 화면 가운데 위쪽에, 글은 아래로
+        im.style.clipPath = isNew ? `inset(${(cT * e).toFixed(2)}% ${ix}% ${(cB * e).toFixed(2)}% ${ix}%)` : `inset(${iy}% ${ix}% ${iy}% ${ix}%)`;
+        if (isNew) $('.aha-title', sec).style.transform = `translate(-50%, calc(-50% - ${((narrow ? 27 : 23) * e).toFixed(2)}vh)) scale(${(1 - (narrow ? 0.4 : 0.45) * e).toFixed(4)})`;
         { const tf = `scale(${1.12 - 0.12 * e})`; $('img', im).style.transform = tf; $('.aha-gl', im).style.transform = tf; }
         st.style.setProperty('--p', e.toFixed(3));
         st.classList.toggle('done', p > 0.82);
-        const day = $('.aha-day', im); if (day) { const q = Math.min(1, Math.max(0, (e - 0.35) / 0.45)); day.style.opacity = (q * q * (3 - 2 * q)).toFixed(3); Object.assign(day.style, { left: ix + '%', top: (39 * e).toFixed(2) + '%', width: (100 - 2 * ix).toFixed(2) + '%', height: (100 - 43 * e).toFixed(2) + '%' }); day.style.transform = `scale(${(1.45 - 0.2 * e).toFixed(4)}) translateX(-2.9%)`; }
+        const day = $('.aha-day', im); if (day) { const q = Math.min(1, Math.max(0, (e - 0.35) / 0.45)); day.style.opacity = (q * q * (3 - 2 * q)).toFixed(3); Object.assign(day.style, { left: ix + '%', top: (cT * e).toFixed(2) + '%', width: (100 - 2 * ix).toFixed(2) + '%', height: (100 - (cT + cB) * e).toFixed(2) + '%' }); day.style.transform = narrow ? `scale(${(1.3 - 0.15 * e).toFixed(4)})` : `scale(${(1.45 - 0.2 * e).toFixed(4)}) translateX(-2.9%)`; }
       });
     }
     ahCleanup = () => offs.forEach((f) => f && f());

@@ -1029,3 +1029,12 @@ html[lang] .he-bottom .hero-slogan { margin: 0; font-size: clamp(2.2rem, 4vw, 3.
 /* 사진: 다 받아진 뒤 부드럽게 나타남 (갑자기 '퐉' 뜨지 않도록) */
 #app img:not(.ld) { opacity: 0 !important; }
 :where(#app) img { transition: opacity .7s cubic-bezier(.2, .6, .2, 1); }
+
+/* ABOUT 첫 화면 — 모바일: 제목 위, 액자 가운데, 두 글은 아래에 차례로 */
+@media (max-width: 760px) {
+  .ah-new .aha-l, .ah-new .aha-r { width: auto; left: var(--gutter); right: var(--gutter); bottom: auto; }
+  .ah-new .aha-l { top: 66.5vh; font-size: .95rem; line-height: 1.65; }
+  .ah-new .aha-r { top: 80vh; font-size: .8rem; line-height: 1.7; }
+  .aha-def { flex-direction: column; gap: 8px; text-align: center; padding: 0 var(--gutter); }
+  .aha-def i { display: none; }
+}
