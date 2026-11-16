@@ -221,8 +221,8 @@
     const nv = true;
     const ttl = `<h1 class="ah-title ah-slogan">${lang === 'ko' ? `<span class="ln">${TYPE('ko_slogan_1')}</span><span class="ln">${TYPE('ko_slogan_2')}</span><span class="sr">한국의 아름다움을 일상 속에서</span>` : `<span class="ln">${TYPE('en_about_slogan')}</span><span class="sr">Korean beauty, in the everyday</span>`}</h1>`;
     const def = nv ? (lang === 'ko' ? '햇빛에 비친 잔물결처럼, 매일의 순간에 스며드는 빛' : 'like sunlight on a ripple, a light that settles into every day') : (lang === 'ko' ? '햇빛이나 달빛에 비치어 반짝이는 잔물결' : 'the ripple that glitters under sun or moonlight');
-    const lt = nv ? (lang === 'ko' ? '윤슬은 물 위에 반짝이는 빛에서 이름을 얻었습니다. 그 빛처럼, 한국의 아름다움도 특별한 날이 아닌 매일의 순간에 머물러야 한다고 믿습니다.' : 'Yunseul takes its name from light glinting on water. Like that light, we believe Korean beauty belongs to ordinary days, not only special ones.') : t('about_lead');
-    const rt = nv ? (lang === 'ko' ? '할머니의 가락지, 한옥의 처마, 나전칠기의 자개. 유리장 속 전통을 출근길의 귀걸이와 손끝의 반지로 옮겨, 오늘의 옷차림 위에서 다시 빛나게 합니다.' : 'A grandmother’s ring, the eaves of a hanok, mother-of-pearl inlay. We move tradition out of the display case and onto the earring you wear to work, so it shines again in what you wear today.') : t('intro_body');
+    const lt = nv ? t('ah_l'): t('about_lead');
+    const rt = nv ? t('ah_r'): t('intro_body');
     return `<section class="ah ah-a${nv ? ' ah-new' : ''} on-light">
       <div class="aha-stage">
         <div class="aha-img">${img('lb-water', '', true)}<canvas class="aha-gl" aria-hidden="true"></canvas>${nv ? `<img class="aha-day" src="${IMG('daily-necklace')}" alt="" decoding="async">` : ''}<canvas class="aha-glint" aria-hidden="true"></canvas></div>
@@ -1224,6 +1224,12 @@
 
   /* ---------- boot ---------- */
   injectSymbolDefs();
+  // 모바일(≤760px) 전용 짧은 카피 — js/mobile.js. PC 폭에서는 원문 그대로.
+  const mqM = window.matchMedia('(max-width: 760px)');
+  if (YS.mobile) {
+    YS.mobile(mqM.matches);
+    mqM.addEventListener('change', (e) => { if (YS.mobile(e.matches)) { applyStatic(); renderBag(); route(); } });
+  }
   applyStatic(); renderBag();
   window.addEventListener('hashchange', route);
   route(); markDone(document);

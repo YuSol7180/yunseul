@@ -1,0 +1,6 @@
+/* 윤슬 YUN:SEUL — mobile.css
+   모바일(폭 760px 이하) 전용 스타일. index.html 에서 media="(max-width: 760px)" 로 불러오므로
+   PC 화면에는 적용되지 않습니다. 모바일 수정은 이 파일에서만 합니다. */
+
+/* 제품 카드: 펜던트·길이 등 사이즈 표기 숨김 (상세 페이지 '사이즈' 항목에는 그대로 있음) */
+.pcard-spec { display: none; }

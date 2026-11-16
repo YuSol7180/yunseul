@@ -339,6 +339,8 @@ YS.t = {
   /* about */
   about_title: { ko: '물 위에 반짝이는 빛처럼', en: 'Like light glinting on water' },
   about_lead: { ko: '전통은 박물관 유리장 안에만 있지 않습니다. 윤슬은 할머니의 가락지, 한옥의 처마, 나전칠기의 자개처럼 우리 곁에 있던 아름다움을 오늘 입는 옷 위로 옮겨옵니다.', en: 'Tradition doesn’t only live behind museum glass. Yunseul brings the beauty that was always close by — a grandmother’s garakji rings, the eaves of a hanok, the mother-of-pearl of a lacquered chest — onto the clothes you wear today.' },
+  ah_l: { ko: '윤슬은 물 위에 반짝이는 빛에서 이름을 얻었습니다. 그 빛처럼, 한국의 아름다움도 특별한 날이 아닌 매일의 순간에 머물러야 한다고 믿습니다.', en: 'Yunseul takes its name from light glinting on water. Like that light, we believe Korean beauty belongs to ordinary days, not only special ones.' },
+  ah_r: { ko: '할머니의 가락지, 한옥의 처마, 나전칠기의 자개. 유리장 속 전통을 출근길의 귀걸이와 손끝의 반지로 옮겨, 오늘의 옷차림 위에서 다시 빛나게 합니다.', en: 'A grandmother’s ring, the eaves of a hanok, mother-of-pearl inlay. We move tradition out of the display case and onto the earring you wear to work, so it shines again in what you wear today.' },
   about_kw_title: { ko: '윤슬이 지키는 다섯 가지', en: 'Five things we hold to' },
   kw: [
     { ko: ['전통', '한국 장신구의 형태와 기법에서 출발합니다.'], en: ['Tradition', 'Every piece starts from a Korean ornament or craft technique.'] },
