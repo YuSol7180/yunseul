@@ -302,3 +302,10 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 .best .shop-head .h-section { margin-bottom: 24px; }
 .best .pgrid { order: 2; }
 .best .shop-head .link-line { order: 3; align-self: center; margin-top: 36px; }
+
+/* ---------- 상단바↔페이지 제목 간격 통일 (샵·컬렉션도 룩북·저널과 같은 36px) ---------- */
+.page-top { padding-top: calc(var(--header-h) + 36px); }
+.page-top:has(> .pd) { padding-top: var(--header-h); }
+
+/* ---------- 제품 카드: 사진↔제품명 여백 줄이기 ---------- */
+.pcard-body { padding-top: 10px; }
