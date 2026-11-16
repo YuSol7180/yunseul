@@ -259,3 +259,15 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 .nc .nc-grid .price { margin-top: 4px; font-size: 14px; font-weight: 700; }
 .nc .nc-grid .quick-add, .nc .nc-grid .badge { display: none; }
 .nc { padding: 64px 0 72px; }
+
+/* ---------- 어바웃: 히어로 본문 가운데 정렬 ---------- */
+.ah-new .aha-l, .ah-new .aha-r { text-align: center; }
+
+/* ---------- 어바웃: '윤슬이 지키는 다섯 가지' 타이포 줄이기 ---------- */
+.kw-sec .about-h { font-size: 1.35rem; margin-bottom: 24px; }
+
+/* ---------- 어바웃 심볼: 제목 → 심볼 카드 2개 → 본문 ---------- */
+.symbol-row { grid-template-columns: 1fr 1fr; gap: 12px; }
+.symbol-row > div:last-child { display: contents !important; }
+.symbol-row .h-sub.about-h { order: -1; grid-column: 1 / -1; margin-bottom: 8px !important; }
+.symbol-row .body-copy { grid-column: 1 / -1; margin-top: 6px; }

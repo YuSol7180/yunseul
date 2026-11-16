@@ -18,8 +18,8 @@
     /* 어바웃 */
     't.ah_l.ko': '윤슬은 물 위에 반짝이는 빛에서 이름을 얻었습니다. 한국의 아름다움도 매일의 순간에 머물러야 한다고 믿습니다.',
     't.ah_l.en': 'Yunseul is named for light glinting on water. We believe Korean beauty belongs to every day.',
-    't.ah_r.ko': '할머니의 가락지, 한옥의 처마, 나전칠기의 자개를 오늘의 옷차림 위로 옮깁니다.',
-    't.ah_r.en': 'A grandmother’s ring, hanok eaves, mother-of-pearl inlay, carried into what you wear today.',
+    't.ah_r.ko': '할머니의 가락지, 한옥의 처마, 나전칠기의 자개를<br>오늘의 옷차림 위로 옮깁니다.',
+    't.ah_r.en': 'A grandmother’s ring, hanok eaves, mother-of-pearl inlay,<br>carried into what you wear today.',
     't.about_symbol_body.ko': '이니셜 S와 전통 매듭 문양을 엮은 심볼입니다. 네 방향의 작은 삼각은 물 위로 흩어지는 빛을 뜻합니다.',
     't.about_symbol_body.en': 'The initial S woven like a traditional knot. The four small triangles are light scattering on water.',
     't.motifs.0.ko.1': '가구 가장자리를 장식하던 아자(亞字) 문양. 패키지와 카드의 테두리로 씁니다.',
