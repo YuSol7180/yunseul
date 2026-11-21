@@ -326,4 +326,4 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 .exa-date { gap: 6px; }
 /* 국립중앙박물관 줄을 날짜 아래로 */
 .exa-desc .exa-date { order: 1; }
-.exa-desc .exa-addr-m { order: 2; margin-top: -16px; }
+.exa-desc .exa-addr-m { order: 2; margin-top: -22px; }
