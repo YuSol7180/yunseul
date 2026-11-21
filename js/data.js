@@ -94,7 +94,7 @@ YS.products = [
     short: { ko: '925 실버 · 천연 자개 · 페이퍼클립 체인', en: '925 silver · mother-of-pearl · paperclip chain' },
     spec: { ko: '펜던트 20mm · 70cm', en: 'Pendant 20 mm · 70 cm' },
     isNew: true,
-    images: ['mg-long-front', 'mg-necklace-worn', 'mg-hand-dark', 'mg-hand-vertical'],
+    images: ['mg-long-grey', 'mg-necklace-worn', 'mg-hand-dark', 'mg-hand-vertical'],
     summary: {
       ko: '조금 더 큰 무궁화 펜던트를 길게 늘어뜨린 롱 목걸이. 니트나 셔츠 위에 겹쳐 입기 좋습니다.',
       en: 'A larger mugunghwa pendant on a long chain, made to layer over knits and shirts.'
