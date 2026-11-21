@@ -330,3 +330,9 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 
 /* ---------- 홈 히어로: 휴대폰 주소창이 접혀도 사진이 화면 끝까지 차도록 ---------- */
 .hero { min-height: 100svh; min-height: 100dvh; }
+
+/* ---------- 어바웃 다섯 가지: 접힌 카드 이름도 조선일보명조 레터링으로 ---------- */
+.kwc-v { display: none; }
+.kwc-vm { display: block; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-size: 22px; line-height: 1; color: #fff; transition: opacity .3s var(--ease); }
+.kwc-vm .type { display: block; height: calc(var(--h) / var(--em) * 1em); }
+.kwc-p.on .kwc-vm { opacity: 0; }

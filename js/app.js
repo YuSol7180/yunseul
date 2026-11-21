@@ -335,7 +335,7 @@
   function kwInner() {
     const title = `<h2 class="h-section about-h page-type">${lang === 'ko' ? `<span class="ln">${TYPE('ko_kw_1')}</span><span class="ln">${TYPE('ko_kw_2')}</span>` : `<span class="ln">${TYPE('en_kw')}</span>`}<span class="sr">${t('about_kw_title')}</span></h2>`;
     return `<div class="wrap kwc">${title}
-      <div class="kwc-row">${YS.t.kw.map((k, i) => `<button type="button" class="kwc-p${i ? '' : ' on'}" data-i="${i}" aria-expanded="${!i}"><img src="${IMG(KW_IMG[i])}" alt="" loading="lazy" decoding="async" style="object-position:${KW_POS[i]}"><span class="kwc-v">${L(k)[0]}</span><span class="kwc-t"><strong>${TT('ch_kw_' + lang + '_' + i, L(k)[0])}</strong><span${i === 4 ? ' style="white-space:nowrap;max-width:none"' : ''}>${lang === 'ko' && i === 3 ? L(k)[1].replace('소재와 ', '소재와<br>') : L(k)[1]}</span></span></button>`).join('')}</div>
+      <div class="kwc-row">${YS.t.kw.map((k, i) => `<button type="button" class="kwc-p${i ? '' : ' on'}" data-i="${i}" aria-expanded="${!i}"><img src="${IMG(KW_IMG[i])}" alt="" loading="lazy" decoding="async" style="object-position:${KW_POS[i]}"><span class="kwc-v">${L(k)[0]}</span><span class="kwc-vm" aria-hidden="true">${TYPE('ch_kw_' + lang + '_' + i)}</span><span class="kwc-t"><strong>${TT('ch_kw_' + lang + '_' + i, L(k)[0])}</strong><span${i === 4 ? ' style="white-space:nowrap;max-width:none"' : ''}>${lang === 'ko' && i === 3 ? L(k)[1].replace('소재와 ', '소재와<br>') : L(k)[1]}</span></span></button>`).join('')}</div>
     </div>`;
   }
   function bindKw(sec) {
