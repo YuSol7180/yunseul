@@ -327,3 +327,6 @@ html[lang] .he-t2 .he-bottom .hero-slogan { font-size: 1.75rem; }
 /* 국립중앙박물관 줄을 날짜 아래로 */
 .exa-desc .exa-date { order: 1; }
 .exa-desc .exa-addr-m { order: 2; margin-top: -22px; }
+
+/* ---------- 홈 히어로: 휴대폰 주소창이 접혀도 사진이 화면 끝까지 차도록 ---------- */
+.hero { min-height: 100svh; min-height: 100dvh; }
